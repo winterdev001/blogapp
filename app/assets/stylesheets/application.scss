@@ -15,25 +15,73 @@
  */
 body {
     margin-top: 2rem !important;
+    // width: 96%;
+    background-color: #eafbea !important;
+    // height: 100%;
+    // position: relative;
+    // left: 2%;
+    // right: 2%;
+}
+
+.logo-area {
+    background-color: white;
+    height: 130px;
     width: 96%;
-    background-color: #f7f7f7 !important;
-    height: 100%;
     position: relative;
     left: 2%;
     right: 2%;
 }
 
-.logo-area {
-    background-color: white;
-    height: 120px;
+.top-nav {
+    background-color: #eafbea !important;
 }
 
-.top-nav {
-    background-color: #f7f7f7 !important;
+.logo-area-list > .logo-area-item{
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.nav-brand {
+    margin-left: 20rem;
 }
 
 .all-content {
     margin-top: 1rem;
     background-color: white;
+    width: 96%;
+    position: relative;
+    left: 2%;
+    right: 2%;
+}
 
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100% !important;
+    background-color: #eafbea !important;
+    transition: all .3s ease;
+    box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.562);
+    // border-bottom: 1px solid  rgba(128, 128, 128, 0.541) !important;
+    z-index: 1;
+    height: 55px;    
+  }
+
+// search
+.create {
+    display: none;
+    margin-top: 1rem;
+    // background-color: white;
+    transition: all .8s ease;
+    height: 90px;
+    // width: 100%;
+    width: 96%;
+    position: relative;
+    left: 2%;
+    right: 2%;
+}
+
+.search-input {
+    width: 80rem !important;
+    height: 3rem !important;
 }

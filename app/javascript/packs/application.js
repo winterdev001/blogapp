@@ -15,3 +15,19 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$(document).ready(function () {
+    $("#btn").click(function () {
+        $("#create").toggle();
+    });
+});
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 160) {
+        $('.navbar').addClass('sticky');
+        
+    }
+    else {
+        $('.navbar').removeClass('sticky');        
+    }
+});
