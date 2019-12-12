@@ -23,6 +23,13 @@ body {
     // right: 2%;
 }
 
+.minified {
+    width: 96%;
+    position: relative;
+    left: 2%;
+    right: 2%;
+}
+
 .logo-area {
     background-color: white;
     height: 130px;
@@ -118,3 +125,59 @@ body {
     color:black;
     width: 1rem;
 }
+
+.latest-image {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.latest-card {
+    border-radius: 0 !important;
+    border: white !important
+}
+
+.latest-body {
+    margin-top: 15rem;
+}
+
+.cta-image {
+    height: 55vh !important; 
+}
+
+.cta-card-btn {
+    position: absolute !important;
+    bottom: 50% !important;
+    z-index: 1;
+}
+
+.cta-btn {
+    width: 10rem;    
+}
+
+// .cta:hover{       
+//     .cta-hover {
+//         position: absolute !important;
+//         border: 1px solid white !important;
+//         width: 15rem !important;
+//         height: 53vh !important;
+//         margin-left: .5rem;
+//         margin-top: .4rem;
+//         transition: all .1s ease;            
+//     }  
+// }
+
+
+// .cta:hover {
+//     box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.562);
+// }
+
+.rot {
+    position: relative;
+    top: 60%;
+    // padding: 5px 10px;
+    // line-height: 24px;
+    font-family:  Sans-Serif;
+    letter-spacing: 2px;
+    transform: rotate(270deg) !important;
+}
+

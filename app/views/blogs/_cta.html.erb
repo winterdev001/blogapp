@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" style="width: 33.5rem;height:55vh">        
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3"> 
+              <div class="rot">ABOUT ME</div>
+            </div>
+            <div class="col-md-9">
+              <div class="mt-5">
+                <h4 class="card-title">Life Events Blog Posts :) 
+                    My name is Ryan!</h4>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-light btn-outline-dark  rounded-pill cta-btn text-center">Read More</a>
+              </div>
+            </div>
+          </div>            
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <a class="ctaa">
+        <div class="card cta" style="width: 16rem;">
+          <div class="cta-hover"></div>
+          <div class="cta-card">
+            <%= image_tag('normal.jpg', class:"card-img cta-image")%>
+            <div class="d-flex justify-content-center">
+              <div class="cta-card-btn ">
+                <%= link_to  "Recent Posts", @blog, class:"btn btn-light rounded-pill cta-btn" %>
+              </div>
+            </div> 
+          </div>       
+        </div>
+    </a>
+    </div>
+    <div class="col-md-3">
+      <div class="card cta" style="width: 16rem;">
+        <div class="cta-hover"></div>
+        <div class="cta-card ">
+          <%= image_tag('normal.jpg', class:"card-img cta-image")%>
+          <div class="d-flex justify-content-center">
+            <div class="cta-card-btn ">
+              <%= link_to  "Recent Posts", @blog, class:"btn btn-light rounded-pill cta-btn" %>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
