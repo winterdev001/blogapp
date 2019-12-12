@@ -55,6 +55,14 @@ body {
     right: 2%;
 }
 
+.navbar {
+    padding: 1rem !important;    
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
 .sticky {
     position: fixed !important;
     top: 0;
@@ -64,7 +72,15 @@ body {
     box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.562);
     // border-bottom: 1px solid  rgba(128, 128, 128, 0.541) !important;
     z-index: 1;
-    height: 55px;    
+    height: 55px;  
+    justify-content: center !important;
+    
+    #btn {
+        display: none;
+    }
+    #btn1 {
+        visibility: visible;
+    }
   }
 
 // search
@@ -81,7 +97,24 @@ body {
     right: 2%;
 }
 
+#btn1 {
+  visibility: hidden;
+}
+
 .search-input {
-    width: 80rem !important;
+    width: 75rem !important;
     height: 3rem !important;
+}
+
+.sec-search {
+    // margin-left: 25rem;
+}
+
+.submit {
+    visibility: hidden;
+}
+
+.bars {
+    color:black;
+    width: 1rem;
 }
