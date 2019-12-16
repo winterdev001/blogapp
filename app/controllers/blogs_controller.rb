@@ -12,6 +12,10 @@ class BlogsController < ApplicationController
   def show
   end
 
+  def most_popular 
+    @blogs = Blog.all
+    @blog_id = params[:blog_id]
+  end
   # GET /blogs/new
   def new
     @blog = Blog.new
