@@ -64,7 +64,7 @@ body {
     right: 2%;
 }
 
-.navbar {
+.navy {
     padding: 1rem !important;    
 }
 
@@ -249,4 +249,24 @@ html {
 }
 .blog-detail-card-img {
     height: 50vh;
+}
+
+footer {
+    width: 96%;
+    position: relative;
+    left: 2%;
+    right: 2%;
+}
+
+.footer-nav {
+    background-color: rgba(0, 0, 0, 0.87);
+    color: white !important;
+}
+
+.foot > a {
+    color: rgba(255, 255, 255, 0.815) !important;
+}
+
+.top {
+    margin-left: 8rem !important;
 }
