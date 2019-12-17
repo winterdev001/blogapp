@@ -1,0 +1,23 @@
+<div class="all-content " >
+    <div class="container mb-3" >
+      <div class=" blog-index-card">
+        <div class="">    
+          <div class="row row-cols-1 row-cols-md-3 ">
+            <% @blogs.each do |blog| %>
+            <div class="col mb-4 mt-5">
+              <a  href="/blogs/<%=blog.id%>/blogs/blog_detail" class="text-decoration-none text-dark">
+                <div class="card recent-blog-cards">
+                    <%= image_tag('normal.jpg', class:"card-img all-blogs-card-img")%>
+                  <div class="card-body">
+                      <p class="card-text"><%= blog.content%></p>
+                      <p class="card-text"><small class="text-muted">Posted by : </small></p>
+                  </div>
+                </div>
+              </a>
+            </div>   
+            <%end%>             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

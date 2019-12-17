@@ -26,19 +26,41 @@ $(document).ready(function () {
 // navigation fixed on scroll
 $(window).scroll(function () {
     if ($(this).scrollTop() > 160) {
-        $('.navbar').addClass('sticky');
+        $('.navy').addClass('sticky');
         
     }
     else {
-        $('.navbar').removeClass('sticky');        
+        $('.navy').removeClass('sticky');        
     }
 });
 
 // most-popular-blogs-section counts
+
 $(document).ready(function () {    
-    var current = -1;
-    $("input").each(function() {
+    $(this).ready(function (){
+        var current = 1;
+    $(".most").each(function() {
     $(this).val( current);
     current++;
-    });    
+    }); 
+    });
+       
 });
+
+$(document).ready(function () {    
+    $("#top").click(function (){
+    //     var current = 1;
+    // $(".most").each(function() {
+    // $(this).val( current);
+    // current++;
+    // });     
+    location.reload();
+    });
+    
+       
+});
+
+function refreshPage(){
+    window.location.href=this
+} 
+

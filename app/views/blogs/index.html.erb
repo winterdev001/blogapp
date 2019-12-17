@@ -1,59 +1,65 @@
-<div class="container mb-3">
-  <div class=" blog-index-card">
-    <div class="">    
-      <div class="row">
-        <div class="col-md-8">
-          <div class="card-groups">
-            <% @blogs.each do |blog| %>
-              <a href="/blogs/<%=blog.id%>/blogs/blog_detail" class="text-decoration-none text-dark">
-                <div class="card mb-3 mt-5 all-blogs-card" style="width: 45rem;">
-                  <div class="row no-gutters">
-                    <div class="col-md-5">  
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="line mb-2"></div>
-                          <%= blog.created_at.strftime("%d %B")%>
+<div class="latest minified " id="top">
+  <%= render  "blogs/latest" %>
+</div>
+<div class="cta">
+  <%= render  "blogs/cta" %>
+</div>
+<span id="all_blogs" class=" animated slideInUp"></span>
+<div class="all-content " >
+  <div class="container mb-3" >
+    <div class=" blog-index-card">
+      <div class="">    
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card-groups" >
+              <% @blogs.offset(1).each do |blog| %>
+                <a href="/blogs/<%=blog.id%>/blogs/blog_detail" class="text-decoration-none text-dark" onclick="window.location.href=this">
+                  <div class="card mb-3 mt-5 all-blogs-card" style="width: 45rem;">
+                    <div class="row no-gutters">
+                      <div class="col-md-5">  
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="line mb-2"></div>
+                            <%= blog.created_at.strftime("%d %B")%>
+                          </div>
+                          <div class="col-md-8">
+                            <%= image_tag('normal.jpg', class:"card-img all-blogs-card-img")%>
+                          </div>
+                        </div>                       
+                      </div>
+                      <div class="col-md-7">
+                        <div class="card-body">
+                          <h5 class="card-title title"><%= blog.title%></h5>
+                          <p class="card-text"><%= blog.content%></p>
+                          <p class="card-text"><small class="text-muted">Posted by : </small></p>
                         </div>
-                        <div class="col-md-8">
-                          <%= image_tag('normal.jpg', class:"card-img all-blogs-card-img")%>
-                        </div>
-                      </div>                       
-                    </div>
-                    <div class="col-md-7">
-                      <div class="card-body">
-                        <h5 class="card-title"><%= blog.title%></h5>
-                        <p class="card-text"><%= blog.content%></p>
-                        <p class="card-text"><small class="text-muted">Posted bt : </small></p>
                       </div>
                     </div>
                   </div>
-                </div>
-              </a>
-              <hr>
-            <%end%>
+                </a>
+                <hr>
+              <%end%>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">     
-          <div class="card most-popular mt-5">
-            <h3 class="card-title">Most Popular</h3>
-             <div class="row"> 
-               
-                  <div class="card-body">
-                    <%@blogs.limit(10).each do |blog|%>
-                      <div class="row">
-                        <div class="col-md-9">                      
-                          <input id="most" value="0" >. <%= link_to  blog.title, blogs_most_popular_blog_path(blog.id, blog_id:blog.id) , class:"text-capitalize text-dark text-decoration-none most-popular-link"%><br>                      
-                        </div>
-                        <div class="col-md-3">
-                          <%= image_tag('normal.jpg', class:"card-img most-popular-card-img")%>
-                        </div>
+          <div class="col-md-4">     
+            <div class="card most-popular mt-5">
+              <h3 class="card-title">Most Popular</h3>
+              <div class="row">                
+                <div class="card-body">
+                  <%Blog.all.limit(10).each do |blog|%>
+                    <div class="row">
+                      <div class="col-md-9 ">                      
+                        <input id="most" class="most" value="0" >. <%= link_to  blog.title, blogs_most_popular_blog_path(blog.id, blog_id:blog.id) , class:"text-capitalize text-dark text-decoration-none most-popular-link ", onclick:"window.location.href=this"%><br>                      
                       </div>
-                      <hr>
-                    <%end%> 
-                  </div>
-               
-               
-             </div>            
+                      <div class="col-md-3">
+                        <%= image_tag('normal.jpg', class:"card-img most-popular-card-img")%>
+                      </div>
+                    </div>
+                    <hr>
+                  <%end%> 
+                </div>              
+              </div>            
+            </div>
           </div>
         </div>
       </div>

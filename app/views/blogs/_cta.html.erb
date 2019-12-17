@@ -10,9 +10,9 @@
             <div class="col-md-9">
               <div class="mt-5">
                 <h4 class="card-title">Life Events Blog Posts :) 
-                    My name is Ryan!</h4>
+                    My name is Winter!</h4>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-light btn-outline-dark  rounded-pill cta-btn text-center">Read More</a>
+                <a href="/abouts/about" class="btn btn-light btn-outline-dark  rounded-pill cta-btn text-center">Read More</a>
               </div>
             </div>
           </div>            
@@ -27,7 +27,7 @@
             <%= image_tag('normal.jpg', class:"card-img cta-image")%>
             <div class="d-flex justify-content-center">
               <div class="cta-card-btn ">
-                <%= link_to  "Recent Posts", @blog, class:"btn btn-light rounded-pill cta-btn" %>
+                <a href="/blogs/:id/blogs/all_blogs" onclick="window.location.href=this" class = "btn btn-light rounded-pill cta-btn smooth-scroll">Recent Posts</a>
               </div>
             </div> 
           </div>       
@@ -41,7 +41,7 @@
           <%= image_tag('normal.jpg', class:"card-img cta-image")%>
           <div class="d-flex justify-content-center">
             <div class="cta-card-btn ">
-              <%= link_to  "Recent Posts", @blog, class:"btn btn-light rounded-pill cta-btn" %>
+              <%= link_to  "Instagram", @blog, class:"btn btn-light rounded-pill cta-btn" ,onclick:"window.location.href=this"%>
             </div>
           </div> 
         </div>
