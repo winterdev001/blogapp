@@ -16,12 +16,14 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// toggling search engine
 $(document).ready(function () {
     $("#btn").click(function () {
         $("#create").toggle();
     });
 });
 
+// navigation fixed on scroll
 $(window).scroll(function () {
     if ($(this).scrollTop() > 160) {
         $('.navbar').addClass('sticky');
@@ -30,4 +32,13 @@ $(window).scroll(function () {
     else {
         $('.navbar').removeClass('sticky');        
     }
+});
+
+// most-popular-blogs-section counts
+$(document).ready(function () {    
+    var current = -1;
+    $("input").each(function() {
+    $(this).val( current);
+    current++;
+    });    
 });

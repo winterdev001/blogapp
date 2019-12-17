@@ -199,3 +199,30 @@ body {
 .most-popular-link:hover {
     color: red!important;
 }
+
+.all-blogs-card {
+    border:  none !important;
+    height: 25vh !important;
+}
+
+.all-blogs-card-img {
+    height: 9rem !important;
+    width: 100% !important;
+}
+
+.line {
+    height: 2px;
+    background-color: tomato;
+    width : auto;
+}
+
+.most-popular-card-img {
+    height: 3.5rem;
+    width: 100%;
+}
+
+#most {
+    width: 1.1rem;
+    border: none !important;
+    color: tomato;
+}

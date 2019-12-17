@@ -3,30 +3,57 @@
     <div class="">    
       <div class="row">
         <div class="col-md-8">
-          <div class="card mb-3 mt-5" style="max-width: 540px;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="..." class="card-img" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <div class="card-groups">
+            <% @blogs.each do |blog| %>
+              <a href="/blogs/<%=blog.id%>/blogs/blog_detail" class="text-decoration-none text-dark">
+                <div class="card mb-3 mt-5 all-blogs-card" style="width: 45rem;">
+                  <div class="row no-gutters">
+                    <div class="col-md-5">  
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="line mb-2"></div>
+                          <%= blog.created_at.strftime("%d %B")%>
+                        </div>
+                        <div class="col-md-8">
+                          <%= image_tag('normal.jpg', class:"card-img all-blogs-card-img")%>
+                        </div>
+                      </div>                       
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= blog.title%></h5>
+                        <p class="card-text"><%= blog.content%></p>
+                        <p class="card-text"><small class="text-muted">Posted bt : </small></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </a>
+              <hr>
+            <%end%>
           </div>
         </div>
         <div class="col-md-4">     
           <div class="card most-popular mt-5">
             <h3 class="card-title">Most Popular</h3>
-            <div class="card-body">
-              <%@blogs.each do |blog|%>
-                <%= link_to  blog.title, blogs_most_popular_blog_path(blog.id, blog_id:blog.id) , class:"text-capitalize text-dark text-decoration-none most-popular-link"%><br>
-                <hr>
-              <%end%> 
-            </div>
+             <div class="row"> 
+               
+                  <div class="card-body">
+                    <%@blogs.limit(10).each do |blog|%>
+                      <div class="row">
+                        <div class="col-md-9">                      
+                          <input id="most" value="0" >. <%= link_to  blog.title, blogs_most_popular_blog_path(blog.id, blog_id:blog.id) , class:"text-capitalize text-dark text-decoration-none most-popular-link"%><br>                      
+                        </div>
+                        <div class="col-md-3">
+                          <%= image_tag('normal.jpg', class:"card-img most-popular-card-img")%>
+                        </div>
+                      </div>
+                      <hr>
+                    <%end%> 
+                  </div>
+               
+               
+             </div>            
           </div>
         </div>
       </div>
