@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order("created_at DESC").all
   end
 
   # GET /blogs/1
@@ -13,6 +13,11 @@ class BlogsController < ApplicationController
   end
 
   def most_popular 
+    @blogs = Blog.all
+    @blog_id = params[:blog_id]
+  end
+
+  def blog_detail 
     @blogs = Blog.all
     @blog_id = params[:blog_id]
   end
