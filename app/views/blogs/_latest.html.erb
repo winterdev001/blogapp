@@ -3,7 +3,11 @@
   <div class="row no-gutters">    
       <div class="col-md-7">
         <a href="/blogs/<%=blog.id%>/blogs/blog_detail" class="text-decoration-none text-dark">
-          <%= image_tag('normal.jpg', class:"card-img latest-image")%>
+          <%if blog.image.present?%>
+            <%= image_tag blog.image.url(:medium)%> 
+          <%else%>
+            <%= image_tag('normal.jpg', class:"card-img latest-image")%>
+          <%end%>
         </a>
       </div>
       <div class="col-md-5">
