@@ -35,10 +35,19 @@ $(window).scroll(function () {
 });
 
 // most-popular-blogs-section counts
+
 $(document).ready(function () {    
-    var current = -1;
-    $("input").each(function() {
+    $(this).ready(function (){
+        var current = 1;
+    $(".most").each(function() {
     $(this).val( current);
     current++;
-    });    
+    }); 
+    });
+       
 });
+
+function refreshPage(){
+    window.location.href=this
+} 
+

@@ -1,24 +1,46 @@
-
-<table class="mb-3">
-    <thead>
-        <tr>
-        <th>Title</th>
-        <th>Content</th>
-        <th colspan="3"></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @blogs.each do |blog| %>
-        <tr>
+<div class="all-content ">
+  <div class="container mb-3">
+    <div class=" blog-index-card">
+      <div class="">
+        <div class="row">
+          <div class="col-md-8">
+            <% @blogs.each do |blog| %>
             <% if  params[:id].to_i == blog.id%>
-            <td><%= blog.title %></td>
-            <td><%= blog.content %></td>            
+            <div class="card blog-detail-card mt-5 mb-3">
+              <%= image_tag('normal.jpg', class:"card-img-top blog-detail-card-img")%>
+              <div class="card-body">
+                <h5 class="card-title"><%= blog.title%></h5>
+                <p class="card-text"><%= blog.content%></p>
+                <p class="card-text"><small class="text-muted">Posted by:</small></p>
+              </div>
+            </div>
             <%end %>
-            </tr>
-        <% end %>
-        <a href="/blogs" class="text-decoration-none text-dark">Back</a>
-    </tbody>
-</table>
-
-      
+            <% end %>
+            <a href="/blogs" class="text-decoration-none text-dark btn btn-light" onclick="window.location.href=this">Back</a>
+          </div>
+          <div class="col-md-4">
+            <div class="card most-popular mt-5">
+              <h3 class="card-title">Most Popular</h3>
+              <div class="row">
+                <div class="card-body">
+                  <%Blog.all.limit(10).each do |blog|%>
+                  <div class="row">
+                    <div class="col-md-9 ">
+                      <input id="most" class="most" value="0">.
+                      <%= link_to  blog.title, blogs_most_popular_blog_path(blog.id, blog_id:blog.id) , class:"text-capitalize text-dark text-decoration-none most-popular-link", onclick:"window.location.href=this"%><br>
+                    </div>
+                    <div class="col-md-3">
+                      <%= image_tag('normal.jpg', class:"card-img most-popular-card-img")%>
+                    </div>
+                  </div>
+                  <hr>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

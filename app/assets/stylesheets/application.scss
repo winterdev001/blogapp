@@ -226,3 +226,27 @@ body {
     border: none !important;
     color: tomato;
 }
+
+// .smooth-scroll {
+//     // scroll-behavior: smooth;
+//     transition: all 4s ease !important;
+// }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.recent-blog-cards:hover {
+  transform: scale(1.02);
+}
+
+.title:hover {
+    color: tomato !important;
+}
+
+.blog-detail-card {
+     border: none !important;
+}
+.blog-detail-card-img {
+    height: 50vh;
+}

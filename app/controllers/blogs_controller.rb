@@ -21,6 +21,9 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
     @blog_id = params[:blog_id]
   end
+  def all_blogs 
+    @blogs = Blog.all
+  end
   # GET /blogs/new
   def new
     @blog = Blog.new
