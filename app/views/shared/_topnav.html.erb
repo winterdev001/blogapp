@@ -19,6 +19,8 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="submit" ><i id="btn" class="m"></i><img src="https://img.icons8.com/ios/28/000000/search.png"></i></button>
                   </form> 
+
+                  
                 </div>                                       
               <!-- </div> -->
             </div>
@@ -26,11 +28,23 @@
       </div>  
     </nav>    
 </div>
-<div class="create" id="create">
+<div class="create" id="create" >
   <form class="form-inline" >
     <input class="form-control search-input mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
     <button class="btn btn-outline-light my-2 my-sm-0 text-dark" type="submit" >Search</button>
   </form>
+  
+    <%= search_form_for @search do |f|%>
+                  
+            <div class="form-group ">
+              <%= f.label :title_or_content_cont, "Search by Task_name or Status"%>
+              <%= f.text_field :title_or_content_cont ,class:"form-control" %>
+            </div>          
+          <div class="actions"><%= f.submit "Search", class:"btn btn-dark btn-block" %></div>
+      
+      <%end%>
+  
+  
 </div>
 
 

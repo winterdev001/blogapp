@@ -3,4 +3,13 @@ class Blog < ApplicationRecord
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
     belongs_to :admin
+
+    paginates_per 10
+    def self.search(search)
+        if search
+            where('title LIKE ? or content', "%#{search}%")        
+        else
+            order('id desc')
+        end
+    end
 end

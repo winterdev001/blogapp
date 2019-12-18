@@ -98,7 +98,7 @@ body {
     margin-top: 1rem;
     // background-color: white;
     transition: all .8s ease;
-    height: 90px;
+    height: 170px;
     // width: 100%;
     width: 96%;
     position: relative;
@@ -232,9 +232,9 @@ body {
 //     transition: all 4s ease !important;
 // }
 
-html {
-    scroll-behavior: smooth;
-}
+// html {
+//     scroll-behavior: smooth;
+// }
 
 .recent-blog-cards:hover {
   transform: scale(1.02);
