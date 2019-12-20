@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-md-8">
             <div class="card-groups" >
-              <% @blogs.offset(1).each do |blog| %>
+              <% @blogs.limit(10).offset(1).each do |blog| %>
                 <a href="/blogs/<%=blog.id%>/blogs/blog_detail" class="text-decoration-none text-dark" onclick="window.location.href=this">
                   <div class="card mb-3 mt-5 all-blogs-card" style="width: 45rem;">
                     <div class="row no-gutters">

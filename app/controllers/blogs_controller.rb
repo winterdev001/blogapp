@@ -9,13 +9,13 @@ class BlogsController < ApplicationController
   def index
     # @blogs = Blog.order("created_at DESC").all   
     @search = Blog.ransack(params[:q])
-        @blogs = @search.result.page params[:page]
+        @blogs = @search.result
     if params[:q]
         # @blogs = Blog.search(params[:search]).order("created_at DESC")
         @search = Blog.ransack(params[:q])
-        @blogs = @search.result.page params[:page]
+        @blogs = @search.result
        else
-        @blogs = Blog.all.order('created_at DESC').page params[:page]
+        @blogs = Blog.all.order('created_at DESC')
        end
     # @movies = @search.result
     #   @search = Blog.search(params[:q])    
@@ -33,18 +33,22 @@ class BlogsController < ApplicationController
   end
 
   def most_popular 
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    @search = Blog.ransack(params[:q])
+    @blogs = @search.result
     @blog_id = params[:blog_id]
   end
 
   def blog_detail 
     # @blogs = Blog.all
     @search = Blog.ransack(params[:q])
-        @blogs = @search.result.page params[:page]
+    @blogs = @search.result
     @blog_id = params[:blog_id]
   end
   def all_blogs 
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    @search = Blog.ransack(params[:q])
+    @blogs = @search.result
   end
   # GET /blogs/new
   def new

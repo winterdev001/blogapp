@@ -4,7 +4,7 @@ class Blog < ApplicationRecord
 
     belongs_to :admin
 
-    paginates_per 10
+    paginates_per 9
     def self.search(search)
         if search
             where('title LIKE ? or content', "%#{search}%")        
