@@ -11,7 +11,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%= blog.title%></h5>
                 <p class="card-text"><%= blog.content%></p>
-                <p class="card-text"><small class="text-muted">Posted by:</small></p>
+                <p class="card-text"><small class="text-muted">Posted by: <%= blog.admin.email %> </small></p>
               </div>
             </div>
             <%end %>

@@ -3,8 +3,28 @@ class BlogsController < ApplicationController
   before_action :authenticate_admin!, only: [:new,:edit,:destroy]
   # GET /blogs
   # GET /blogs.json
+  def search
+    @blog =Blog.search(params[:search])
+  end
   def index
-    @blogs = Blog.order("created_at DESC").all
+    # @blogs = Blog.order("created_at DESC").all   
+    @search = Blog.ransack(params[:q])
+        @blogs = @search.result
+    if params[:q]
+        # @blogs = Blog.search(params[:search]).order("created_at DESC")
+        @search = Blog.ransack(params[:q])
+        @blogs = @search.result
+       else
+        @blogs = Blog.all.order('created_at DESC')
+       end
+    # @movies = @search.result
+    #   @search = Blog.search(params[:q])    
+    #   @blogs = if params[:search]
+    #     Blog.where('title LIKE ? or content LIKE ?', "%#{params[:search]}%","%#{params[:search]}%").page(params[:page])    
+    #     else
+    #       #@blogs = Blog.all.order('created_at desc').page params[:page]
+    #       @blogs = Blog.order("created_at DESC").page(params[:page])
+    #     end
   end
 
   # GET /blogs/1
@@ -13,16 +33,22 @@ class BlogsController < ApplicationController
   end
 
   def most_popular 
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    @search = Blog.ransack(params[:q])
+    @blogs = @search.result
     @blog_id = params[:blog_id]
   end
 
   def blog_detail 
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    @search = Blog.ransack(params[:q])
+    @blogs = @search.result
     @blog_id = params[:blog_id]
   end
   def all_blogs 
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    @search = Blog.ransack(params[:q])
+    @blogs = @search.result
   end
   # GET /blogs/new
   def new
@@ -81,6 +107,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :content, :image, :admin_id)
+      params.require(:blog).permit(:title, :content, :image, :admin_id, :search)
     end
 end

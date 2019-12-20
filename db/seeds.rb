@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 1.upto(20) do |num|                                                   
-    Blog.create!(title:"Blog#{num}",content:"blog's deatails#{num}")       
+    Blog.create!(title:"Blog#{num}",content:"blog's deatails#{num}",admin_id:1)       
 end   
 
 Admin.create!(email:"admin@gmail.com",password:"admin123",admin:true)
