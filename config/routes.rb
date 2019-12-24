@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :abouts
   get 'abouts/about'
+  get 'entertainment', to: 'contacts#entertainment', as: 'entertainment'
   root 'blogs#index'
   resources :blogs do
     member do 
