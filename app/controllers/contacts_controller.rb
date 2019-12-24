@@ -10,6 +10,9 @@ class ContactsController < ApplicationController
   def show
   end
 
+  def entertainment
+  end
+
   # GET /contacts/new
   def new
     @contact = Contact.new
